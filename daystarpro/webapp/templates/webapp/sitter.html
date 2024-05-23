@@ -1,0 +1,72 @@
+{% extends "webapp/base.html" %}
+
+
+{% block content %}
+
+
+
+<h1>Welcome manager.... ! {{user}}</h1>
+
+
+<hr>
+<a class="btn btn-outline-primary btn-sm" href="{% url 'sitter_reg' %}"> 
+
+    Add Sitter
+
+</a>
+  
+<hr>
+
+<table class="table table-bordered table-hover">
+
+   <thead class="table-dark">
+      <tr>
+           <th scope="col">ID</th>
+           <th scope="col">Name</th>
+           <th scope="col">Date of birth</th>
+           <th scope="col">Gender</th>
+           <th scope="col">Next of kin </th>
+           <th scope="col">NIN</th>
+           <th scope="col">Recommender</th>
+           <th scope="col">Education level</th>
+           <th scope="col">Sitter no</th>
+           <th scope="col">Contacts</th>
+           
+
+           <th scope="col">View</th>
+        
+
+      </tr>
+
+   </thead>
+
+{% if sitters %}
+
+ {% for sitter in sitters %}
+
+      <tr>
+           <td>{{sitter.id}}</td>
+
+
+         <td>{{sitter.name}} </td>
+         <td>{{sitter.dob}}</td>
+         <td>{{sitter.gender}}</td>
+         <td>{{sitter.next_of_kin}}</td>
+         <td>{{sitter.NIN}}</td>
+         <td>{{sitter.recommender_name}}</td>
+         <td>{{sitter.level_of_education}}</td>
+         <td>{{sitter.sitter_number}}</td>
+         <td>{{sitter.contacts}}</td>
+         
+
+         <td> <a href="{% url 'sitter_view' sitter.id %}">View </a> </td>
+
+
+      </tr>
+
+
+  {% endfor %}
+
+{% endif %}
+
+{% endblock  %}

@@ -1,0 +1,37 @@
+{% extends "webapp/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<body>
+
+  <div class="container bg-light shadow-md p-5 forms-layout" >
+ 
+   <h3>Add Sitter</h3>
+
+    <h6> Add in the required details for  the Sitters</h6>
+ 
+   <hr>
+   <br>
+ 
+   <form method="POST" action="" autocomplete="off">
+ 
+     {% csrf_token %}
+ 
+     {{form|crispy}}
+       
+     <br>
+ 
+     <button type="submit" class="btn btn-info w-100 btn-block p-2">Add</button>
+ 
+ 
+   </form>
+
+  </div>
+
+ </body>
+
+
+{% endblock  %}

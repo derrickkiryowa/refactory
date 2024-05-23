@@ -1,0 +1,73 @@
+{% extends "webapp/base.html" %}
+
+
+{% block content %}
+
+  <h2>Welcome......  {{user}}</h2>
+
+
+  <hr>
+  <a class="btn btn-outline-primary btn-sm" href="{% url 'baby_reg' %}"> 
+
+      Add Baby 
+
+  </a>
+    
+  <hr>
+  
+  <table class="table table-bordered table-hover" >
+
+     <thead class="table-dark">
+        <tr>
+             <th scope="col">ID</th>
+             <th scope="col">Full name</th>
+             <th scope="col">Age</th>
+             <th scope="col">Gender</th>
+             <th scope="col">Parent </th>
+             <th scope="col">Drop off</th>
+             <th scope="col">Picked by</th>
+             <th scope="col">Period of stay</th>
+             <th scope="col">Location</th>
+             <th scope="col">Time In</th>
+             <th scope="col">Time Out</th>
+
+             <th scope="col">View</th>
+          
+
+        </tr>
+
+     </thead>
+
+{% if babies %}
+
+   {% for baby in babies %}
+
+        <tr>
+             <td>{{baby.id}}</td>
+
+
+           <td>{{baby.first_name}} {{baby.last_name}}</td>
+           <td>{{baby.age}}</td>
+           <td>{{baby.gender}}</td>
+           <td>{{baby.parents_name}}</td>
+           <td>{{baby.drop_off}}</td>
+           <td>{{baby.pickedby}}</td>
+           <td>{{baby.periodofstay}}</td>
+           <td>{{baby.location}}</td>
+           <td>{{baby.time_in}}</td>
+           <td>{{baby.time_out}}</td>
+
+
+           <td> <a class="btn btn-success btn-sm" href="{% url 'baby_view' baby.id %}"> <i class="fa fa-eye" aria-hidden="true"></i></a> </td>
+
+
+        </tr>
+
+
+    {% endfor %}
+
+{% endif %}
+   
+   
+
+{% endblock  %}

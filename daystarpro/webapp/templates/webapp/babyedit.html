@@ -1,0 +1,37 @@
+{% extends "webapp/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<body>
+
+  <div class="container bg-light shadow-md p-5 forms-layout" >
+ 
+   <h3>Edit baby</h3>
+
+    <h6>Update your  babies details</h6>
+ 
+   <hr>
+   <br>
+ 
+   <form method="POST" action="" autocomplete="off">
+ 
+     {% csrf_token %}
+ 
+     {{form|crispy}}
+       
+     <br>
+ 
+     <button type="submit" class="btn btn-primary ">Edit</button>
+ 
+     <a href="{% url 'baby' %}" class="btn btn-secondary"> Return</a>
+     
+   </form>
+
+  </div>
+
+  <br>
+
+ </body>
+
+ {% endblock %}

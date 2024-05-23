@@ -1,0 +1,50 @@
+{% extends "webapp/base.html" %}
+
+{% block content %}
+
+<div class="card">
+
+    <strong>
+         
+      &nbsp;  &nbsp;  &nbsp;
+
+       {{sitter.name}}
+      
+
+    </strong>
+
+      <div class="card-body">
+         <p><strong> ID: </strong>  {{sitter.id}} </p>
+         <p><strong> Name: </strong>  {{sitter.name}}</p>
+         <p><strong> Date of birth: </strong>  {{sitter.dob}}</p>
+         <p><strong> Gender: </strong>  {{sitter.gender}}</p>
+         <p><strong> Next of kin: </strong>  {{sitter.next_of_kin}}</p>
+         <p><strong> NIN: </strong>  {{sitter.NIN}}</p>
+         <p><strong> Recommender : </strong>  {{sitter.recommender_name}}</p>
+         <p><strong> Education level : </strong>  {{sitter.level_of_education}}</p>
+         <p><strong> Sitter no : </strong>  {{sitter.sitter_number}}</p>
+         <p><strong> Contacts : </strong>  {{sitter.contacts}}</p>
+
+       </div>
+
+
+</div>
+
+    <br>
+
+    <a href="{% url 'sitter' %}" class="btn btn-secondary"> Return</a>
+
+     &nbsp;
+
+    <a href="{% url 'sitteredit' sitter.id %}" class="btn btn-info"> Edit</a>
+
+     &nbsp;
+
+    <a href="{% url 'sitter_delete' sitter.id  %}" class="btn btn-danger"> Delete</a>
+
+
+
+
+
+
+{% endblock  %}

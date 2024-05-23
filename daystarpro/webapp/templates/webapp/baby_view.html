@@ -1,0 +1,50 @@
+{% extends "webapp/base.html" %}
+
+{% block content %}
+
+<div class="card">
+
+    <strong>
+         
+      &nbsp;  &nbsp;  &nbsp;
+
+       {{baby.last_name}}
+       {{baby.first_name}}
+
+    </strong>
+
+      <div class="card-body">
+         <p><strong> ID: </strong>  {{baby.id}} </p>
+         <p><strong> Age: </strong>  {{baby.age}}</p>
+         <p><strong> Gender: </strong>  {{baby.gender}}</p>
+         <p><strong> Parent name: </strong>  {{baby.parents_name}}</p>
+         <p><strong> Drop off: </strong>  {{baby.drop_off}}</p>
+         <p><strong> Picked by: </strong>  {{baby.pickedby}}</p>
+         <p><strong> period of stay : </strong>  {{baby.periodofstay}}</p>
+         <p><strong> Location : </strong>  {{baby.Location}}</p>
+         <p><strong> Time In : </strong>  {{baby.time_in}}</p>
+         <p><strong> Time Out : </strong>  {{baby.time_out}}</p>
+
+       </div>
+
+
+</div>
+
+    <br>
+
+    <a href="{% url 'baby' %}" class="btn btn-secondary"> Return</a>
+
+     &nbsp;
+
+    <a href="{% url 'babyedit' baby.id %}" class="btn btn-info"> Edit &nbsp; <i class="fa fa-pencil-square-o" aria-hidden="true"></i>   </a>
+
+     &nbsp;
+
+    <a href="{% url 'baby_delete' baby.id  %}" class="btn btn-danger"> Delete</a>
+
+
+
+
+
+
+{% endblock  %}

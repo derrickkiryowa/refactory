@@ -1,0 +1,73 @@
+{% extends "webapp/base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+
+<body>
+
+  <div class="container bg-light shadow-md p-5 forms-layout" >
+ 
+   <h3>Add Baby</h3>
+
+    <h6>Start adding in the required details for your the baby</h6>
+ 
+   <hr>
+   <br>
+ 
+   <form method="POST" action="" autocomplete="off">
+ 
+     {% csrf_token %}
+ 
+     {{form.first_name|as_crispy_field}}
+       
+     <br>
+
+     {{form.last_name|as_crispy_field}}
+
+     <br>
+
+     {{form.age|as_crispy_field}}
+
+     <br>
+     
+     {{form.gender|as_crispy_field}}
+
+     <br>
+
+     {{form.parents_name|as_crispy_field}}
+
+     <br>
+
+     {{form.drop_off|as_crispy_field}}
+
+     <br>
+
+     {{form.pickedby|as_crispy_field}}
+
+     <br>
+
+     {{form.periodofstay|as_crispy_field}}
+
+     <br>
+
+     {{form.location|as_crispy_field}}
+
+     <br>
+
+     {{form.time_out|as_crispy_field}}
+
+     <br>
+ 
+     <button type="submit" class="btn btn-info w-100 btn-block p-2">Add &nbsp; <i class="fa fa-plus" aria-hidden="true"></i></button>
+ 
+ 
+   </form>
+
+  </div>
+
+ </body>
+
+
+{% endblock  %}
